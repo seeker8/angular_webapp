@@ -8,5 +8,12 @@ angular.module('flapperNews', [])
              {title: 'post2', upvotes: 4},
              {title: 'post3', upvotes: 1},
              {title: 'post4', upvotes: 3}
-        ]
+        ];
+        $scope.addPost = function(){
+            if(!$scope.title || $scope.title === ''){
+                return;
+            }
+            $scope.posts.push({title: $scope.title, upvotes: 0});
+            $scope.title = '';
+        };
     }]);
